@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Travel Registration Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f0f4f8;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .head {
+            border-bottom: 2px solid #333;
+            background: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .lg {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navb {
+            display: flex;
+            gap: 30px;
+        }
+
+        .btnsC {
+            font-size: 18px;
+        }
+
+        .links {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .links:hover {
+            color: #007BFF;
+        }
+
+        .body {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .fm {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 30px 40px;
+            width: 500px;
+        }
+
+        .fmdata {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .inp {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .inp label {
+            flex: 1;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .inp input[type="text"],
+        .inp input[type="date"],
+        .inp input[type="number"],
+        .inp select {
+            flex: 2;
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .inp input[type="text"]:focus,
+        .inp input[type="date"]:focus,
+        .inp input[type="number"]:focus,
+        .inp select:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+
+        .genderbtn {
+            flex: 2;
+            display: flex;
+            gap: 20px;
+            justify-content: flex-start;
+        }
+
+        .genderbtn label {
+            font-weight: normal;
+            color: #555;
+            cursor: pointer;
+        }
+
+        .genderbtn input[type="radio"] {
+            margin-right: 6px;
+            cursor: pointer;
+        }
+
+        #sub {
+            display: flex;
+            justify-content: center;
+        }
+
+        .subtn {
+            width: 120px;
+            height: 40px;
+            font-size: 18px;
+            border-radius: 6px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease, font-size 0.3s ease;
+        }
+
+        .subtn:hover {
+            background-color: #0056b3;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <div class="nav">
+            <div class="logo">
+                <div class="lg">Travelers</div>
+            </div>
+            <div class="navb">
+                <div class="btnsC"><a href="#" class="links">Home</a></div>
+                <div class="btnsC"><a href="#" class="links">City</a></div>
+                <div class="btnsC"><a href="#" class="links">About us</a></div>
+                <div class="btnsC"><a href="#" class="links">Contact Us</a></div>
+            </div>
+            <div class="search"></div>
+        </div>
+    </div>
+    <div class="body">
+        <div class="fm">
+            <form action="#" method="GET" class="fmdata">
+                <div class="inp">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" required />
+                </div>
+                <div class="inp">
+                    <label for="dob">DOB:</label>
+                    <input type="date" name="dob" id="dob" required />
+                </div>
+                <div class="inp">
+                    <label for="num">Phone Number:</label>
+                    <input type="tel" name="num" id="num" pattern="[0-9]{10}" placeholder="10-digit number" required />
+                </div>
+                <div class="inp">
+                    <label>Gender:</label>
+                    <span class="genderbtn">
+                        <label for="male"><input type="radio" name="gender" id="male" value="Male" required /> Male</label>
+                        <label for="female"><input type="radio" name="gender" id="female" value="Female" /> Female</label>
+                    </span>
+                </div>
+                <div class="inp">
+                    <label for="drop">City of Travel:</label>
+                    <select name="options" id="drop" required>
+                        <option value="" disabled selected>Select city</option>
+                        <option value="Surat">Surat</option>
+                        <option value="Ahmedabad">Ahmedabad</option>
+                        <option value="Vadodara">Vadodara</option>
+                        <option value="Gandhinagar">Gandhinagar</option>
+                    </select>
+                </div>
+                <div class="inp" id="sub">
+                    <input type="submit" value="Submit" class="subtn" />
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
